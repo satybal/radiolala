@@ -3,8 +3,7 @@ class PagesController < ApplicationController
   DEFAULT_LIST = "http://all.api.radio-browser.info/json/stations/bycountry/russia".freeze
 
   def home
-
     json = JSON.parse(Net::HTTP.get_response(URI(DEFAULT_LIST)).body)
-    byebug
+    @stations = json
   end
 end
